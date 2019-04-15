@@ -1,0 +1,31 @@
+{
+  "name": "scrappy",
+  "version": "1.0.0",
+  "description": "A website that scrapes news articles from other sites and allows people to comment on them.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ededmond/Scrappy.git"
+  },
+  "keywords": [
+    "Web",
+    "Scraping",
+    "News"
+  ],
+  "author": "Emma Dedmond",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ededmond/Scrappy/issues"
+  },
+  "homepage": "https://github.com/ededmond/Scrappy#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mongoose": "^5.5.1"
+  }
+}
