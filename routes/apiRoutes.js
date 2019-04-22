@@ -8,11 +8,19 @@ module.exports = db => {
             const $ = cheerio.load(response.data);
             const title = $(".headline").first().children().first().text();
             const image = $("picture").find("img").first().attr("src");
-            const body = $(".post-content").first().text();
+            const category = $(".storytype-label").first().text();
+            let body = "";
+            if (category !== "News In Photos") {
+                body = $(".post-content").first().text().split("Advertisement")[0];
+            }
+            const date = $(".meta__time").first().attr("datetime");
+            console.log(date);
             const article = {
                 title,
                 image,
                 body,
+                category,
+                date,
                 link: req.body.link
             }
             db.Article.create(article)

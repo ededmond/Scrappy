@@ -15,8 +15,16 @@ const ArticleSchema = new Schema ({
         type: String,
         required: true
     },
+    category: {
+        type: String,
+        required: true
+    },
     body: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now()
     },
     comments: [
         {

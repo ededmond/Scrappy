@@ -17,7 +17,7 @@ module.exports = db => {
 
                     const date = $(element).children("header").first().children("div").first().children().first().children().html().split('\"')[3];
                     
-                    const body =  $(element).children(".item__content").first()
+                    const body =  $(element).children(".item__content").first();
                     const image = body.find("picture").first().children().first().attr("data-srcset");
                     const blurb = body.children(".excerpt").first().text();
                     data.push({title, link, image, blurb,date, index:i, category});
@@ -30,9 +30,8 @@ module.exports = db => {
     })
 
     router.get("/saved",(req,res) => {
-        db.Article.find({}).populate("Comment")
+        db.Article.find({}).sort([["date",-1]]).populate("Comment")
         .then(article => {
-            console.log(article);
             res.render("saved",{article});
         })
         .catch(error => {

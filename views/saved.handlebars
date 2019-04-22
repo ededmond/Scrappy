@@ -5,17 +5,29 @@
     <div class = "articles row">
     {{#each article}}
         <article class = "row">
-            <div class = "col-2">
-                <img class = "small-image"src = {{image}}>
-            </div>
-            <div class = "col-8">
-                <h3>{{title}}</h3>
-                <p>{{body}}</p>
-            </div>
-            <div class = "col-2">
-                <button id="remove-{{_id}}" class = "remove-article" data-_id={{_id}} >Delete</button>
-                <button id="view-{{_id}}"class = "view" data-_id ={{_id}}>View</button>
-                <a href = {{link}}>Read more</a>
+            <div class = "col-12">
+                <div class = "row">
+                    <div class = "col-sm-3">
+                        <img class = "small-image"src = {{image}}>
+                        <h5 class = "category">{{category}}</h5>
+                    </div>
+                    <div class = "col-sm-7">
+                        <h3>{{title}}</h3>
+                        <p>{{body}}</p>
+                    </div>
+                    <div class = "col-sm-2">
+                        <button id="remove-{{_id}}" class = "remove-article" data-_id={{_id}} >Delete</button>
+                        <a href = {{link}}>Read more</a>
+                    </div>
+                </div>
+                <div class = "comments row">
+                    <div class = "col-sm-3"></div>
+                </div>
+                <div class = "row">
+                    <div class = "col-12 text-center">
+                    <button id="view-{{_id}}"class = " btn view-comments center-block" data-_id ={{_id}}>View Comments</button>
+                    </div>
+                </div> 
             </div>
         </article>
     {{/each}}
