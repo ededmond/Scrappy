@@ -1,3 +1,4 @@
 module.exports ={
-    Article: "filler"
+    Article: require("./Article"),
+    Comment: require("./Comment")
 }

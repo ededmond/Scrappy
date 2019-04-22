@@ -1,21 +1,20 @@
 <div class = "container">
     <header class = "row">
-        <h1>New Articles:</h1>
+        <h1>Saved Articles:</h1>
     </header>
     <div class = "articles row">
     {{#each article}}
         <article class = "row">
             <div class = "col-2">
                 <img class = "small-image"src = {{image}}>
-                <h5 class = "category">{{category}}</h5>
             </div>
             <div class = "col-8">
                 <h3>{{title}}</h3>
-                <p>{{blurb}}</p>
+                <p>{{body}}</p>
             </div>
             <div class = "col-2">
-                <button id="save-{{index}}" class = "save-article" data-link={{link}} >Save Article</button>
-                <button id="view-{{index}}"class = "view hidden" data-link ={{link}}>View</button>
+                <button id="remove-{{_id}}" class = "remove-article" data-_id={{_id}} >Delete</button>
+                <button id="view-{{_id}}"class = "view" data-_id ={{_id}}>View</button>
                 <a href = {{link}}>Read more</a>
             </div>
         </article>
