@@ -58,4 +58,8 @@ $(document).on("ready", event => {
         })
     })
 
+    $("#clear").on("click",event => {
+        $("#article-div").html("<h2>No new Articles</h2>");
+    })
+
 })
