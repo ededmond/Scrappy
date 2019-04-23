@@ -1,6 +1,16 @@
 <div class = "container">
     <header class = "row">
-        <h1>New Articles:</h1>
+        <div class = "col-4">
+            <h1>New Articles:</h1>
+        </div>
+        <div class="col-4">
+        <a class = "btn" href="/" id ="scrape">SCRAPE ARTICLES</a>
+
+        </div>
+        <div class = "col-4">
+        <a class = "btn" id = "clear">CLEAR ARTICLES</a>
+
+        </div>
     </header>
     <div id = "article-div" class = "articles row">
     {{#each article}}

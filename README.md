@@ -1,6 +1,6 @@
 # Scrappy
 A website that scrapes news articles from other sites and allows people to comment on them.
-Going to the homepage will display new articles taken from TheOnion.com and display the blurbs along with some additional info. 
+Going to the homepage will display new articles taken from TheOnion.com and display the blurbs along with some additional info. The user can click "scrape articles" to get the most up to date articles or "clear articles" to remove all articles already on the page.
 
 Clicking on "Save Article" will save the article to the database, and it can be accessed via the "Saved Articles" Link in the navigation bar at the top of the page. Only one copy of each article will be saved in the database.
 
