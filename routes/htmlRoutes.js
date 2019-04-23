@@ -32,7 +32,6 @@ module.exports = db => {
     router.get("/saved",(req,res) => {
         db.Article.find({}).sort([["date",-1]]).populate("comments")
         .then(article => {
-            console.log(article);
             res.render("saved",{article});
         })
         .catch(error => {

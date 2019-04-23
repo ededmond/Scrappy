@@ -14,7 +14,6 @@ module.exports = db => {
                 body = $(".post-content").first().text().split("Advertisement")[0];
             }
             const date = $(".meta__time").first().attr("datetime");
-            console.log(date);
             const article = {
                 title,
                 image,
@@ -57,6 +56,16 @@ module.exports = db => {
             res.json(article);
         })
         .catch(error => {
+            res.json(error);
+        })
+    })
+
+    router.delete("/comment/:id",(req,res) => {
+        const id = req.params.id;
+        db.Comment.remove({_id:id}).then(response => {
+            console.log(response);
+            res.json(response);
+        }).catch(error => {
             res.json(error);
         })
     })
