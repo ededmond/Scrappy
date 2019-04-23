@@ -24,4 +24,29 @@ $(document).on("ready", event => {
         })
     })
 
+    $(".view-comments").on("click",event => {
+        const id = $(event.target).attr("data-_id");
+        $(`#comments-${id}`).removeClass("hidden");
+        $(event.target).addClass("hidden");
+    });
+
+    $(".submit-comment").on("click",event => {
+        event.preventDefault();
+        const id = $(event.target).attr("data-_id");
+        const author = $(`#comment-author-${id}`).val().trim() || "Anonymous";
+        const body = $(`#comment-text-${id}`).val().trim();
+        if (body) {
+            $.ajax({
+                type: "POST",
+                url: "/api/comment/"+id,
+                data: {
+                    author,
+                    body
+                }
+            }).then(response => {
+                location.reload();
+            })
+        }
+    })
+
 })

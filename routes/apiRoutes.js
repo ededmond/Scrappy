@@ -42,5 +42,23 @@ module.exports = db => {
             res.json(err);
         })
     })
+
+    router.post("/comment/:id",(req,res) => {
+        const id = req.params.id;
+        const comment = {
+            author: req.body.author.trim(),
+            body: req.body.body.trim()
+        }
+        db.Comment.create(comment)
+        .then(comment => {
+            return db.Article.findOneAndUpdate({_id: id},{$push: {comments:comment._id}},{new:true});
+        })
+        .then(article => {
+            res.json(article);
+        })
+        .catch(error => {
+            res.json(error);
+        })
+    })
     return router;
 }

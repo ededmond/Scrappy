@@ -20,8 +20,23 @@
                         <a href = {{link}}>Read more</a>
                     </div>
                 </div>
-                <div class = "comments row">
-                    <div class = "col-sm-3"></div>
+                <div class = "comments row hidden" id="comments-{{_id}}">
+                    <div class = "col-12">
+                        <h4>Comments</h4>
+                        {{#each comments}}
+                        <div class= "comment row">
+                            <div class = "col-sm-3">Author: {{author}}</div>
+                            <div class = "col-sm-9"><p>{{body}}</p></div>
+                        </div>
+                        {{/each}}
+                        <div class = "add-comment row">
+                            <form class = "col-12 text-center">
+                                Your Name: <input type = "text" placeholder="Anonymous" id="comment-author-{{_id}}">
+                                <input type = "text" id="comment-text-{{_id}}" class = "new-comment">
+                                <button id = "submit-{{_id}}" class ="submit-comment" data-_id={{_id}}>Comment</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class = "row">
                     <div class = "col-12 text-center">
