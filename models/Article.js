@@ -9,7 +9,8 @@ const ArticleSchema = new Schema ({
     },
     link: {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     image: {
         type: String,
