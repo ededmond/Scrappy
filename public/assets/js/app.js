@@ -50,6 +50,7 @@ $(document).on("ready", event => {
     })
     $(".delete-comment").on("click",event => {
         const id= $(event.target).attr("data-_id");
+        console.log("data-id");
         $.ajax({
             type: "DELETE",
             url: "/api/comment/"+id

@@ -62,6 +62,7 @@ module.exports = db => {
 
     router.delete("/comment/:id",(req,res) => {
         const id = req.params.id;
+        console.log(id);
         db.Comment.remove({_id:id}).then(response => {
             console.log(response);
             res.json(response);
