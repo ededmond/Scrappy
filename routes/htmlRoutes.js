@@ -4,6 +4,9 @@ const cheerio = require("cheerio");
 
 module.exports = db => {
     router.get("/", (req,res) => {
+        res.render("index");
+    })
+    router.get("/scrape", (req,res) => {
         axios.get("https://www.theonion.com/").then(response => {
             const $ = cheerio.load(response.data);
             const data = [];
